@@ -1,0 +1,58 @@
+{
+  "id1": {
+    "id": "1",
+    "name": "Apple",
+    "price": "1.25",
+    "image": "https://firebasestorage.googleapis.com/v0/b/grocery-store-8b1cb.appspot.com/o/apple.png?alt=media&token=20760da7-0cb9-4c46-a84f-dc1cb9a041b6",
+    "food_condition": "Fresh Apples",
+    "description": "Apples are known for their sweet and tart taste, and come in a variety of colors and sizes depending on the variety. Apples are also known for their nutritional value, as they are a good source of fiber, vitamin C, and antioxidants.",
+    "nutritions": {
+      "calories": "95",
+      "carbohydrates": "25 grams",
+      "fiber": "4 grams",
+      "Vitamin C": "14% of the Daily Value (DV)"
+    }
+  },
+  "id2": {
+    "id": "2",
+    "name": "Banana",
+    "price": "0.95",
+    "image": "https://firebasestorage.googleapis.com/v0/b/grocery-store-8b1cb.appspot.com/o/banana.png?alt=media&token=fd1767a1-533f-4a8c-b024-11db7c0c4bd3",
+    "food_condition": "Fresh Bananas",
+    "description": "Bananas are known for their yellow color, sweet taste, and soft texture. They are a good source of carbohydrates, fiber, vitamins, and minerals.",
+    "nutritions": {
+      "calories": "105",
+      "carbohydrates": "27 grams",
+      "fiber": "3 grams",
+      "Vitamin C": "14% of the Daily Value (DV)"
+    }
+  },
+  "id3": {
+    "id": "3",
+    "name": "Strawberry",
+    "price": "2.78",
+    "image": "https://firebasestorage.googleapis.com/v0/b/grocery-store-8b1cb.appspot.com/o/strawberry.png?alt=media&token=38709414-530a-4191-8b0f-e5d17308e2dc",
+    "food_condition": "Fresh Strawberries",
+    "description": "Strawberries are known for their bright red color, juicy texture, and sweet, slightly tart taste. In addition to their taste, strawberries are also a good source of vitamins, minerals, and antioxidants.",
+    "nutritions": {
+      "calories": "49 per cup (150 grams)",
+      "carbohydrates": "12 grams per cup",
+      "fiber": "3 grams per cup",
+      "Vitamin C": "113% of the Daily Value (DV) per cup"
+    }
+  },
+  "id4": {
+    "id": "4",
+    "name": "Orange",
+    "price": "0.88",
+    "image": "https://firebasestorage.googleapis.com/v0/b/grocery-store-8b1cb.appspot.com/o/orange.png?alt=media&token=3f41a0ad-4e0e-421f-b24d-4422eed6b714",
+    "food_condition": "Fresh Oranges",
+    "description": "They are known for their bright orange color, sweet taste, and juicy texture. Oranges are a good source of vitamins, minerals, and antioxidants.",
+    "nutritions": {
+      "calories": "80",
+      "carbohydrates": "19 grams",
+      "fiber": "3 grams",
+      "Vitamin C": "130% of the Daily Value (DV)"
+    }
+  }
+}
