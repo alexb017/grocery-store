@@ -30,6 +30,7 @@ export default function Product(props) {
           <div className="product-btns">
             {quantity === 0 ? (
               <button
+                type="button"
                 className="product-btn-add"
                 onClick={() => props.onProductAdd(details)}
               >
@@ -41,10 +42,12 @@ export default function Product(props) {
                 >
                   <path d="M11.883 3.007 12 3a1 1 0 0 1 .993.883L13 4v7h7a1 1 0 0 1 .993.883L21 12a1 1 0 0 1-.883.993L20 13h-7v7a1 1 0 0 1-.883.993L12 21a1 1 0 0 1-.993-.883L11 20v-7H4a1 1 0 0 1-.993-.883L3 12a1 1 0 0 1 .883-.993L4 11h7V4a1 1 0 0 1 .883-.993L12 3l-.117.007Z" />
                 </svg>
+                Add
               </button>
             ) : (
               <>
                 <button
+                  type="button"
                   className="product-btn-add"
                   onClick={() => props.onProductDelete(details.id)}
                 >
@@ -57,8 +60,9 @@ export default function Product(props) {
                     <path d="M3.997 13H20a1 1 0 1 0 0-2H3.997a1 1 0 1 0 0 2Z" />
                   </svg>
                 </button>
-                {quantity}
+                <strong>{quantity}</strong>
                 <button
+                  type="button"
                   className="product-btn-add"
                   onClick={() => props.onProductAdd(details)}
                 >

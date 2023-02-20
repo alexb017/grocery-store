@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Cart(props) {
   const { cart } = props;
 
@@ -12,10 +14,12 @@ export default function Cart(props) {
     0
   );
 
-  let minOrder = 35;
   let totalPriceMinOrder = totalPrice;
+  let minOrder = 35;
+  let addedPrice = 6.99;
+
   if (totalPriceMinOrder < minOrder) {
-    totalPriceMinOrder += 6.99;
+    totalPriceMinOrder += addedPrice;
   }
 
   return (
@@ -34,25 +38,28 @@ export default function Cart(props) {
                 return (
                   <div key={product.id} className="cart-content-product">
                     <div className="cart-image">
-                      <img
-                        src={product.image}
-                        width="100"
-                        height="100"
-                        alt={product.name}
-                      />
+                      <Link to={`/products/${product.id}`}>
+                        <img
+                          src={product.image}
+                          width="100"
+                          height="100"
+                          alt={product.name}
+                        />
+                      </Link>
                     </div>
                     <div className="cart-info">
                       <div className="cart-info-top">
                         <h3>{product.name}</h3>
                         <p>{product.food_condition}</p>
                       </div>
-                      <span>{product.category.toLowerCase()}</span>
+                      <span>{product.category}</span>
                     </div>
                     <div className="cart-price-info">
                       <h3>${product.price}</h3>
                       <div className="product-btns">
                         {product.quantity === 0 ? (
                           <button
+                            type="button"
                             className="product-btn-add"
                             onClick={() => props.onProductAdd(product)}
                           >
@@ -68,6 +75,7 @@ export default function Cart(props) {
                         ) : (
                           <>
                             <button
+                              type="button"
                               className="product-btn-add"
                               onClick={() => props.onProductDelete(product.id)}
                             >
@@ -80,8 +88,9 @@ export default function Cart(props) {
                                 <path d="M3.997 13H20a1 1 0 1 0 0-2H3.997a1 1 0 1 0 0 2Z" />
                               </svg>
                             </button>
-                            {product.quantity}
+                            <strong>{product.quantity}</strong>
                             <button
+                              type="button"
                               className="product-btn-add"
                               onClick={() => props.onProductAdd(product)}
                             >
@@ -113,14 +122,16 @@ export default function Cart(props) {
                   <p>
                     Below order minimum <br></br> (less than $35)
                   </p>
-                  <p>${6.99}</p>
+                  <p>$6.99</p>
                 </div>
               </div>
               <div className="bill-total">
                 <p>Estimated total</p>
                 <p>${totalPriceMinOrder.toFixed(2)}</p>
               </div>
-              <button className="btn-checkout">Continue to checkout</button>
+              <button type="button" className="btn-checkout">
+                Continue to checkout
+              </button>
             </div>
           </div>
         )}

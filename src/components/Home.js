@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -12,9 +12,9 @@ export default function Home() {
             Shopping is a bit of a relaxing hobby for me, which <br></br> is
             something troubling for the bank balance.
           </p>
-          <NavLink to="/products" className="btn-home">
+          <Link to="/products" className="btn-home">
             View products
-          </NavLink>
+          </Link>
         </div>
       </div>
     </div>

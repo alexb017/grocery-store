@@ -8,6 +8,9 @@ import Ad from './components/Ad';
 import './App.css';
 import { useState } from 'react';
 import Cart from './components/Cart';
+import ProductDetails from './components/ProductDetails';
+import Footer from './components/Footer';
+import Credits from './components/Credits';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -68,6 +71,16 @@ function App() {
                 />
               }
             ></Route>
+            <Route
+              path="/products/:id/"
+              element={
+                <ProductDetails
+                  cart={cart}
+                  onProductAdd={handleProductAdd}
+                  onProductDelete={handleProductDelete}
+                />
+              }
+            ></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route
@@ -80,8 +93,10 @@ function App() {
                 />
               }
             ></Route>
+            <Route path="/credits" element={<Credits />}></Route>
           </Routes>
         </div>
+        <Footer />
       </main>
     </BrowserRouter>
   );

@@ -1,3 +1,21 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  --primary: #0069c0;
+  --primary-1: #e3f2fd;
+
+  --secondary: #707070;
+  --secondary-1: #eeeeee;
+  --secondary-2: #f5f5f5;
+
+  --accent: #ffe082;
+  --accent-2: #4b2c20;
+  --accent-3: #ffebee;
+  --accent-4: #ba000d;
+  --accent-5: #ef5350;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 body {
@@ -5,8 +23,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  color: black;
-  background-color: #f5f5f5;
+  color: var(--black);
+  background-color: var(--secondary-2);
 }
 
 * {
@@ -22,7 +40,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
 
 h1 {
