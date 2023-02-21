@@ -11,7 +11,7 @@ export default function ProductDetails(props) {
 
   useEffect(() => {
     fetch(
-      `https://grocery-store-8b1cb-default-rtdb.firebaseio.com/fruitsDetails/id${params.id}.json`
+      `https://grocery-store-8b1cb-default-rtdb.firebaseio.com/productsDetails/id${params.id}.json`
     )
       .then((response) => response.json())
       .then((data) => {

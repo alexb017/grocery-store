@@ -5,32 +5,32 @@ export default function Credits() {
         <h1>Credits</h1>
         <p>
           All resources are from{' '}
-          <a href="https://pngtree.com/" className="credit-link">
-            PNGTree
+          <a href="https://www.freepik.com/" className="credit-link">
+            Freepik
           </a>
           .
         </p>
         <ul>
           <li>
-            bowl of fruits and vegetables{' '}
+            assortment of vegetables in grocery bag{' '}
             <a
               className="credit-link"
               target="_blank"
               rel="noreferrer"
-              href="https://pngtree.com/freepng/vector-bowl-of-fruits-and-vegetables_2720605.html?sol=downref&id=bef"
+              href="https://www.freepik.com/free-photo/top-view-assortment-vegetables-grocery-bag_12418308.htm#page=3&query=grocery&position=1&from_view=search&track=sph"
             >
-              PNG Designed By peterIN
+              Freepik
             </a>
           </li>
           <li>
-            tomato{' '}
+            tomatoes{' '}
             <a
               className="credit-link"
               target="_blank"
               rel="noreferrer"
-              href="https://pngtree.com/freepng/tomatoes--tomatoes--vegetables_6370280.html?sol=downref&id=bef"
+              href="https://www.freepik.com/free-photo/tomatoes_1007778.htm#query=tomato&position=3&from_view=search&track=sph"
             >
-              PNG Designed By tree
+              Image by jannoon028
             </a>
           </li>
           <li>
@@ -39,9 +39,9 @@ export default function Credits() {
               className="credit-link"
               target="_blank"
               rel="noreferrer"
-              href="https://pngtree.com/freepng/food-ingredients-vegetable-lettuce_5801292.html?sol=downref&id=bef"
+              href="https://www.freepik.com/free-photo/white-vegetable-healthy-fresh-natural_1089834.htm#page=4&query=lettuce&position=24&from_view=search&track=sph"
             >
-              PNG Designed By tree
+              Image by mrsiraphol
             </a>
           </li>
           <li>
@@ -50,20 +50,20 @@ export default function Credits() {
               className="credit-link"
               target="_blank"
               rel="noreferrer"
-              href="https://pngtree.com/freepng/a-green-healthy-broccoli_5515346.html?sol=downref&id=bef"
+              href="https://www.freepik.com/free-photo/fresh-broccoli-vegetable_7220565.htm#query=lettuce&position=22&from_view=search&track=sph"
             >
-              PNG Designed By tree
+              Image by Racool_studio
             </a>
           </li>
           <li>
-            sweet pepper{' '}
+            red bell peppers{' '}
             <a
               className="credit-link"
               target="_blank"
               rel="noreferrer"
-              href="https://pngtree.com/freepng/bell-peppers-sweet-pepper-agricultural-food_6343580.html?sol=downref&id=bef"
+              href="https://www.freepik.com/free-photo/bell-pepper_1166703.htm#from_view=detail_alsolike"
             >
-              PNG Designed By tree
+              Image by topntp26
             </a>
           </li>
           <li>
@@ -72,42 +72,53 @@ export default function Credits() {
               className="credit-link"
               target="_blank"
               rel="noreferrer"
-              href="https://pngtree.com/freepng/apple-is-naturally-thirsty-and-healthy_6329766.html?sol=downref&id=bef"
+              href="https://www.freepik.com/free-photo/green-apple-with-leaves_923297.htm#query=apple&position=0&from_view=search&track=sph"
             >
-              PNG Designed By tree
+              Image by kstudio
             </a>
           </li>
           <li>
-            banana{' '}
+            raspberries{' '}
             <a
               className="credit-link"
               target="_blank"
               rel="noreferrer"
-              href="https://pngtree.com/freepng/banana-yellow-fruit-banana-skewers_8413319.html?sol=downref&id=bef"
+              href="https://www.freepik.com/free-photo/fresh-raspberry-with-leaves_9207034.htm#from_view=detail_alsolike"
             >
-              PNG Designed By 琪琪
+              Image by Racool_studio
             </a>
           </li>
           <li>
-            strawberry{' '}
+            strawberries{' '}
             <a
               className="credit-link"
               target="_blank"
               rel="noreferrer"
-              href="https://pngtree.com/freepng/strawberry-pattern_696.html?sol=downref&id=bef"
+              href="https://www.freepik.com/free-photo/closeup-shot-fresh-ripe-strawberries-isolated-white-surface_20949014.htm#query=raspberry&position=31&from_view=search&track=sph"
             >
-              PNG Designed By CHENXIN
+              Image by wirestock
             </a>
           </li>
           <li>
-            oranges{' '}
+            orange{' '}
             <a
               className="credit-link"
               target="_blank"
               rel="noreferrer"
-              href="https://pngtree.com/freepng/orange-png-png-free-download_3619070.html?sol=downref&id=bef"
+              href="https://www.freepik.com/free-photo/orange-white-white_6901003.htm#query=orange&position=1&from_view=search&track=sph"
             >
-              PNG Designed By metcup
+              Image by Racool_studio
+            </a>
+          </li>
+          <li>
+            many different berries{' '}
+            <a
+              className="credit-link"
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.freepik.com/free-photo/many-different-berries-form-frame-white-background_26484867.htm#query=fruits&position=2&from_view=search&track=sph"
+            >
+              Image by artbutenkov
             </a>
           </li>
         </ul>

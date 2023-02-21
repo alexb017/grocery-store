@@ -7,7 +7,9 @@ export default function Products(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://grocery-store-8b1cb-default-rtdb.firebaseio.com/fruits.json')
+    fetch(
+      'https://grocery-store-8b1cb-default-rtdb.firebaseio.com/products.json'
+    )
       .then((response) => response.json())
       .then((data) => {
         if (!data) {

@@ -2,8 +2,8 @@
   --white: #ffffff;
   --black: #000000;
 
-  --primary: #0069c0;
-  --primary-1: #e3f2fd;
+  --primary: #087f23;
+  --primary-1: #e8f5e9;
 
   --secondary: #707070;
   --secondary-1: #eeeeee;
@@ -24,7 +24,6 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color: var(--black);
-  background-color: var(--secondary-2);
 }
 
 * {
@@ -41,6 +40,17 @@ body {
 a {
   text-decoration: none;
   color: var(--black);
+}
+
+a:focus-visible {
+  all: unset;
+}
+
+img {
+  all: unset;
+}
+img:focus-visible {
+  all: unset;
 }
 
 h1 {
@@ -62,4 +72,9 @@ strong {
 
 svg {
   fill: currentColor;
+}
+
+input,
+textarea {
+  all: unset;
 }

@@ -1,0 +1,122 @@
+{
+  "id1": {
+    "id": "1",
+    "name": "Granny Smith Apples",
+    "price": "1.25",
+    "image": "https://res.cloudinary.com/drbu50m1e/image/upload/v1676979349/grocery-store/products/apple_kicskk.jpg",
+    "food_condition": "Fresh Produce",
+    "description": "Apples are known for their sweet and tart taste, and come in a variety of colors and sizes depending on the variety. Apples are also known for their nutritional value, as they are a good source of fiber, vitamin C, and antioxidants.",
+    "nutritions": {
+      "calories": "95",
+      "carbohydrates": "25 grams",
+      "fiber": "4 grams",
+      "vitamin_c": "14% of the Daily Value (DV)"
+    },
+    "category": "fruits"
+  },
+  "id2": {
+    "id": "2",
+    "name": "Fresh Raspberries",
+    "price": "3.48",
+    "image": "https://res.cloudinary.com/drbu50m1e/image/upload/v1676979515/grocery-store/products/raspberry_pbltet.jpg",
+    "food_condition": "Fresh Produce",
+    "description": "Raspberries are a sweet and tart fruit that are a good source of nutrients. They are low in calories and high in fiber, and are rich in vitamins and minerals.",
+    "nutritions": {
+      "calories": "64",
+      "carbohydrates": "15 grams",
+      "fiber": "8 grams",
+      "vitamin_c": "54% of the recommended daily intake (RDI)"
+    },
+    "category": "fruits"
+  },
+  "id3": {
+    "id": "3",
+    "name": "Broccoli Crowns",
+    "price": "1.48",
+    "image": "https://res.cloudinary.com/drbu50m1e/image/upload/v1676979529/grocery-store/products/broccoli_mo4ztd.jpg",
+    "food_condition": "Fresh Produce",
+    "description": "Broccoli is a nutritious vegetable that is part of the cruciferous family of vegetables, which also includes kale, cauliflower, and Brussels sprouts.",
+    "nutritions": {
+      "calories": "31",
+      "carbohydrates": "6 grams",
+      "fiber": "2.4 grams",
+      "vitamin_c": "135% of the recommended daily intake (RDI)"
+    },
+    "category": "vegetables"
+  },
+  "id4": {
+    "id": "4",
+    "name": "Strawberry",
+    "price": "2.78",
+    "image": "https://res.cloudinary.com/drbu50m1e/image/upload/v1676979511/grocery-store/products/strawberry_wkhstb.jpg",
+    "food_condition": "Fresh Produce",
+    "description": "Strawberries are known for their bright red color, juicy texture, and sweet, slightly tart taste. In addition to their taste, strawberries are also a good source of vitamins, minerals, and antioxidants.",
+    "nutritions": {
+      "calories": "49 per cup (150 grams)",
+      "carbohydrates": "12 grams per cup",
+      "fiber": "3 grams per cup",
+      "vitamin_c": "113% of the Daily Value (DV) per cup"
+    },
+    "category": "fruits"
+  },
+  "id5": {
+    "id": "5",
+    "name": "Red Bell Peppers",
+    "price": "1.38",
+    "image": "https://res.cloudinary.com/drbu50m1e/image/upload/v1676979532/grocery-store/products/pepper_xs7bwn.jpg",
+    "food_condition": "Fresh Produce",
+    "description": "Red bell peppers are a type of sweet pepper that are known for their bright red color, mild flavor, and crunchy texture.",
+    "nutritions": {
+      "calories": "37",
+      "carbohydrates": "9 grams",
+      "fiber": "3 grams",
+      "vitamin_c": "169% of the recommended daily intake (RDI)"
+    },
+    "category": "vegetables"
+  },
+  "id6": {
+    "id": "6",
+    "name": "Navel Orange",
+    "price": "0.88",
+    "image": "https://res.cloudinary.com/drbu50m1e/image/upload/v1676979506/grocery-store/products/orange_pjh8ch.jpg",
+    "food_condition": "Fresh Produce",
+    "description": "They are known for their bright orange color, sweet taste, and juicy texture. Oranges are a good source of vitamins, minerals, and antioxidants.",
+    "nutritions": {
+      "calories": "80",
+      "carbohydrates": "19 grams",
+      "fiber": "3 grams",
+      "vitamin_c": "130% of the Daily Value (DV)"
+    },
+    "category": "fruits"
+  },
+  "id7": {
+    "id": "7",
+    "name": "Tomato on the Vine",
+    "price": "1.98",
+    "image": "https://res.cloudinary.com/drbu50m1e/image/upload/v1676979522/grocery-store/products/tomato_xhw26w.jpg",
+    "food_condition": "Fresh Produce",
+    "description": "Tomatoes are a popular fruit (although commonly thought of as a vegetable) that are widely used in cooking and known for their sweet, juicy flavor.",
+    "nutritions": {
+      "calories": "22",
+      "carbohydrates": "4.8 grams",
+      "fiber": "1.5 grams",
+      "vitamin_c": "28% of the recommended daily intake (RDI)"
+    },
+    "category": "vegetables"
+  },
+  "id8": {
+    "id": "8",
+    "name": "Green Leaf Lettuce",
+    "price": "1.88",
+    "image": "https://res.cloudinary.com/drbu50m1e/image/upload/v1676979525/grocery-store/products/lettuce_brthdl.jpg",
+    "food_condition": "Fresh Produce",
+    "description": "Lettuce is a leafy green vegetable that is commonly used in salads and sandwiches.",
+    "nutritions": {
+      "calories": "5",
+      "carbohydrates": "1 grams",
+      "fiber": "1.3 grams",
+      "vitamin_c": "2% of the Daily Value (DV)"
+    },
+    "category": "vegetables"
+  }
+}
