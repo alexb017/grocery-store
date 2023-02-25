@@ -6,15 +6,28 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Ad from './components/Ad';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
 import Footer from './components/Footer';
 import Credits from './components/Credits';
 
 function App() {
-  const [cart, setCart] = useState([]);
-  console.log(cart);
+  const [cart, setCart] = useState(() => {
+    let savedCart = [];
+    try {
+      savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    } catch (error) {
+      savedCart = [];
+    }
+    return savedCart;
+  });
+
+  useEffect(() => {
+    if (cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  }, [cart]);
 
   function handleProductAdd(newProduct) {
     const existingProduct = cart.find(

@@ -24,9 +24,9 @@ export default function Product(props) {
           <p>{details.food_condition}</p>
         </div>
         <div className="product-price">
-          <p>
-            <span>${details.price}</span> per kg
-          </p>
+          <h3>
+            ${details.price} <span>{details.unit}</span>
+          </h3>
           <div className="product-btns">
             {quantity === 0 ? (
               <button

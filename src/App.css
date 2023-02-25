@@ -170,15 +170,17 @@
 }
 .product-info p {
   color: var(--secondary);
+  font-size: 14px;
 }
 .product-price {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.product-price span {
-  font-size: 20px;
-  font-weight: 700;
+.product-price h3 span {
+  color: var(--secondary);
+  font-size: 14px;
+  font-weight: 400;
 }
 .product-btns {
   display: flex;
@@ -341,9 +343,14 @@
   align-self: flex-start;
   margin-top: 10px;
 }
+.product-details-food-condition {
+  font-size: 14px;
+  color: var(--secondary);
+}
 .product-details-info h3 span {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
+  color: var(--secondary);
 }
 .product-details-category-top {
   display: flex;

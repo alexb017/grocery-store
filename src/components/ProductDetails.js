@@ -48,8 +48,10 @@ export default function ProductDetails(props) {
                 </button>
               </div>
             </div>
-            <p>{product.food_condition}</p>
-            <h1>{product.name}</h1>
+            <p className="product-details-food-condition">
+              {product.food_condition}
+            </p>
+            <h2>{product.name}</h2>
             <h3>
               ${product.price} <span>per kg</span>
             </h3>
