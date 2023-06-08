@@ -11,6 +11,7 @@ import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
 import Footer from './components/Footer';
 import Credits from './components/Credits';
+import Favorite from './components/Favorite';
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -24,17 +25,23 @@ function App() {
   });
 
   useEffect(() => {
+    console.log(cart)
+  }, [cart])
+
+  useEffect(() => {
     if (cart) {
       localStorage.setItem('cart', JSON.stringify(cart));
     }
   }, [cart]);
 
   function handleProductAdd(newProduct) {
+    // check if item exists
     const existingProduct = cart.find(
       (product) => product.id === newProduct.id
     );
 
     if (existingProduct) {
+      // increase quantity
       const updatedCart = cart.map((product) => {
         if (product.id === newProduct.id) {
           return { ...product, quantity: product.quantity + 1 };
@@ -43,12 +50,13 @@ function App() {
       });
       setCart(updatedCart);
     } else {
+      // product is new to cart
       setCart([...cart, { ...newProduct, quantity: 1 }]);
     }
   }
 
   function handleProductDelete(id) {
-    const productDelete = cart.filter((product) => product.id !== id);
+    // check if item exist
     const existingProduct = cart.find((product) => product.id === id);
 
     if (existingProduct) {
@@ -61,8 +69,52 @@ function App() {
       setCart(updatedCart);
     }
 
-    if (existingProduct.quantity === 1) {
+
+    if (existingProduct.quantity === 1 && !existingProduct.favorite) {
+      // delete item
+      const productDelete = cart.filter((product) => product.id !== id);
       setCart(productDelete);
+    }
+  }
+
+  function handleProductFavorite(newProduct) {
+    // check if item exists
+    const existingProduct = cart.find(
+      (product) => product.id === newProduct.id
+    );
+
+    if (existingProduct) {
+      // update favorite
+      const updatedCart = cart.map((product) => {
+        if (product.id === newProduct.id) {
+          return { ...product, favorite: !product.favorite };
+        }
+        return product;
+      });
+      setCart(updatedCart);
+    } else {
+      // product is new to cart
+      setCart([...cart, { ...newProduct, favorite: true, quantity: 0 }]);
+    }
+  }
+
+  function handleProductFavoriteDelete(id) {
+    const productFavorite = cart.find(product => product.id === id);
+
+    if (productFavorite.quantity === 0) {
+      const productDelete = cart.filter(product => product.id !== id);
+      setCart(productDelete);
+    }
+
+    if (productFavorite.quantity > 0) {
+      // update favorite
+      const updatedCart = cart.map((product) => {
+        if (product.id === id) {
+          return { ...product, favorite: !product.favorite };
+        }
+        return product;
+      });
+      setCart(updatedCart);
     }
   }
 
@@ -81,6 +133,8 @@ function App() {
                   cart={cart}
                   onProductAdd={handleProductAdd}
                   onProductDelete={handleProductDelete}
+                  onProductFavorite={handleProductFavorite}
+                  onProductFavoriteDelete={handleProductFavoriteDelete}
                 />
               }
             ></Route>
@@ -91,11 +145,25 @@ function App() {
                   cart={cart}
                   onProductAdd={handleProductAdd}
                   onProductDelete={handleProductDelete}
+                  onProductFavorite={handleProductFavorite}
+                  onProductFavoriteDelete={handleProductFavoriteDelete}
                 />
               }
             ></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
+            <Route
+              path="/favorite"
+              element={
+                <Favorite
+                  cart={cart}
+                  onProductAdd={handleProductAdd}
+                  onProductDelete={handleProductDelete}
+                  onProductFavorite={handleProductFavorite}
+                  onProductFavoriteDelete={handleProductFavoriteDelete}
+                />
+              }
+            ></Route>
             <Route
               path="/cart"
               element={
@@ -103,6 +171,8 @@ function App() {
                   cart={cart}
                   onProductAdd={handleProductAdd}
                   onProductDelete={handleProductDelete}
+                  onProductFavorite={handleProductFavorite}
+                  onProductFavoriteDelete={handleProductFavoriteDelete}
                 />
               }
             ></Route>

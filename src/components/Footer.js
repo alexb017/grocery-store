@@ -5,7 +5,7 @@ export default function Footer() {
     <div className="footer">
       <div className="container">
         <div className="footer-content">
-          <p>&copy; 2023 GroceryStore. All rights reserved.</p>
+          <p>&copy; 2023 GroceryStore.</p>
           <Link to="/" className="nav-title">
             <svg
               width="24"

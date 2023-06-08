@@ -47,8 +47,9 @@ a:focus-visible {
 }
 
 img {
-  all: unset;
+  all: inherit;
 }
+
 img:focus-visible {
   all: unset;
 }

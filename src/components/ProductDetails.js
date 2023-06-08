@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Loader from './Loader';
 
 export default function ProductDetails(props) {
   const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
   const params = useParams();
   const { cart } = props;
-
-  const productCart = cart.find((product) => product.id === params.id);
-  const quantity = productCart ? productCart.quantity : 0;
 
   useEffect(() => {
     fetch(
@@ -15,15 +15,31 @@ export default function ProductDetails(props) {
     )
       .then((response) => response.json())
       .then((data) => {
+        if (!data) {
+          setLoading(false);
+        }
+        setLoading(false);
         setProduct(data);
       })
-      .catch((error) => console.log('Could not load product details', error));
-  }, []);
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
+  }, [params.id]);
+
+  const productCart = cart.find((product) => product.id === params.id);
+  const quantity = productCart ? productCart.quantity : 0;
+
+  const favorite = productCart ? productCart.favorite : false;
 
   return (
     <div className="product-details">
       <div className="product-details-content">
+        {loading && <Loader />}
         <div className="product-details-image">
+          <Link to={`/products`} className="product-link-back">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M224 128a8 8 0 0 1-8 8H59.31l58.35 58.34a8 8 0 0 1-11.32 11.32l-72-72a8 8 0 0 1 0-11.32l72-72a8 8 0 0 1 11.32 11.32L59.31 120H216a8 8 0 0 1 8 8Z" /></svg>
+          </Link>
           <img
             src={product.image}
             width="500"
@@ -35,18 +51,15 @@ export default function ProductDetails(props) {
           <div className="product-details-info">
             <div className="product-details-category-top">
               <p className="product-details-category">{product.category}</p>
-              <div className="product-details-favorite">
-                <button type="button" className="btn-favorite">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="m12.82 5.58-.82.822-.824-.824a5.375 5.375 0 1 0-7.601 7.602l7.895 7.895a.75.75 0 0 0 1.06 0l7.902-7.897a5.376 5.376 0 0 0-.001-7.599 5.38 5.38 0 0 0-7.611 0Zm6.548 6.54L12 19.485 4.635 12.12a3.875 3.875 0 1 1 5.48-5.48l1.358 1.357a.75.75 0 0 0 1.073-.012L13.88 6.64a3.88 3.88 0 0 1 5.487 5.48Z" />
-                  </svg>
+              {!favorite ?
+                <button type="button" className="btn-favorite" onClick={() => props.onProductFavorite(product)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M178 32c-20.65 0-38.73 8.88-50 23.89C116.73 40.88 98.65 32 78 32a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 220.66 240 164 240 94a62.07 62.07 0 0 0-62-62Zm-50 174.8C109.74 196.16 32 147.69 32 94a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8Z" /></svg>
                 </button>
-              </div>
+                :
+                <button type="button" className="btn-favorite" onClick={() => props.onProductFavoriteDelete(product.id)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="#ef5350" d="M240 94c0 70-103.79 126.66-108.21 129a8 8 0 0 1-7.58 0C119.79 220.66 16 164 16 94a62.07 62.07 0 0 1 62-62c20.65 0 38.73 8.88 50 23.89C139.27 40.88 157.35 32 178 32a62.07 62.07 0 0 1 62 62Z" /></svg>
+                </button>
+              }
             </div>
             <p className="product-details-food-condition">
               {product.food_condition}

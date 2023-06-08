@@ -36,6 +36,8 @@ export default function Products(props) {
               details={product}
               onProductAdd={props.onProductAdd}
               onProductDelete={props.onProductDelete}
+              onProductFavorite={props.onProductFavorite}
+              onProductFavoriteDelete={props.onProductFavoriteDelete}
               cart={props.cart}
             />
           );

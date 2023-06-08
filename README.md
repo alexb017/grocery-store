@@ -1,6 +1,6 @@
 # Grocery Store
 
-I made a simple grocery store using react and firebase realtime database.
+I build a simple grocery store app using react.
 
 ![My Remote Image](https://res.cloudinary.com/drbu50m1e/image/upload/v1677015872/projects/grocery-store/grocery-store-home_xnzmjc.jpg)
 ![My Remote Image](https://res.cloudinary.com/drbu50m1e/image/upload/v1677015879/projects/grocery-store/grocery-store-products_y7c1ph.jpg)
@@ -9,9 +9,10 @@ I made a simple grocery store using react and firebase realtime database.
 
 #### Features
 
-- fetch the products from the API
+- fetch products from an API
 - add/delete products in cart
 - show product quantity
 - show cart count
 - store products using localStorage
 - show product details
+- show favorite products
