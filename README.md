@@ -13,3 +13,4 @@ I build a simple grocery store app using react.
 - store products using localStorage
 - show product details
 - show favorite products
+- show related products

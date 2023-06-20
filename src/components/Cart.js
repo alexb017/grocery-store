@@ -124,7 +124,7 @@ export default function Cart(props) {
                 );
               })}
             </div>
-            {totalProducts > 0 && (
+            {totalProducts > 0 ? (
               <div className="cart-content-bill">
                 <h3>Products cost</h3>
                 <div className="bill-info">
@@ -146,7 +146,9 @@ export default function Cart(props) {
                 <button type="button" className="btn-checkout">
                   Continue to checkout
                 </button>
-              </div>)
+              </div>) : (
+              <button type="button" className="btn">Continue Shopping</button>
+            )
             }
           </div>
         )}
