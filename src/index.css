@@ -1,19 +1,32 @@
 :root {
-  --white: #ffffff;
-  --black: #000000;
+  --color-white: #fff;
+  --color-white-text: #fff;
+  --color-gray-100: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-red-500: #ef4444;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-500: #22c55e;
+  --color-green-900: #14532d;
+  --color-amber-200: #fde68a;
+  --color-amber-950: #451a03;
+}
 
-  --primary: #087f23;
-  --primary-1: #e8f5e9;
-
-  --secondary: #707070;
-  --secondary-1: #eeeeee;
-  --secondary-2: #f5f5f5;
-
-  --accent: #ffe082;
-  --accent-2: #4b2c20;
-  --accent-3: #ffebee;
-  --accent-4: #ba000d;
-  --accent-5: #ef5350;
+body.dark {
+  --color-white: #262626;
+  --color-gray-100: #171717;
+  --color-gray-500: #d4d4d4;
+  --color-gray-900: #fff;
+  --color-green-100: #14532d;
+  --color-green-900: #bbf7d0;
+  --color-amber-200: #171717;
+  --color-amber-950: #a3a3a3;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
@@ -23,7 +36,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  color: var(--black);
+  color: var(--color-gray-900);
+  background-color: var(--color-gray-100);
 }
 
 * {
@@ -39,7 +53,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--color-gray-900);
 }
 
 a:focus-visible {

@@ -6,7 +6,7 @@
 
 /* Ad */
 .ad {
-  background-color: var(--accent);
+  background-color: var(--color-amber-200);
 }
 
 .ad-top-content {
@@ -19,7 +19,7 @@
 .ad-top-content p,
 .ad-top-content a {
   font-size: 14px;
-  color: var(--accent-2);
+  color: var(--color-amber-950);
 }
 
 .text-promo strong {
@@ -36,7 +36,7 @@
 .nav {
   position: relative;
   z-index: 9;
-  background-color: var(--white);
+  background-color: var(--color-white);
   box-shadow: 0 5px 20px rgb(0 0 0 / 5%);
 }
 
@@ -62,15 +62,12 @@
   list-style-type: none;
   display: flex;
   align-items: center;
-}
-
-.nav-ul li:nth-child(-n + 5) {
-  margin-right: 20px;
+  column-gap: 20px;
 }
 
 .nav-li a {
   font-weight: 500;
-  color: var(--black);
+  color: var(--color-gray-900);
   transition: opacity 200ms;
 }
 
@@ -79,7 +76,7 @@
 }
 
 .nav-li a.active {
-  color: var(--primary);
+  color: var(--color-green-500);
   text-decoration: underline;
 }
 
@@ -97,20 +94,20 @@
   position: absolute;
   top: -10px;
   left: 10px;
-  padding: 2px 6px;
-  font-size: 8px;
-  color: var(--white);
-  border: 2px solid var(--white);
+  padding: 1px 5px;
+  font-size: 9px;
+  color: var(--color-white-text);
+  border: 2px solid var(--color-white);
   border-radius: 100px;
-  background-color: var(--accent-5);
+  background-color: var(--color-red-500);
 }
 
 .btn-cart {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: var(--primary-1);
-  color: var(--primary);
+  background-color: var(--color-green-100);
+  color: var(--color-green-900);
   padding: 10px 24px;
   border-radius: 100px;
   font-weight: 700;
@@ -119,7 +116,7 @@
 }
 
 .btn-cart svg {
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
 .btn-cart:hover {
@@ -130,22 +127,34 @@
   position: absolute;
   top: -10px;
   right: 0;
-  padding: 2px 6px;
+  padding: 1px 5px;
   font-size: 10px;
-  border: 2px solid var(--white);
+  border: 2px solid var(--color-white);
   border-radius: 100px;
-  background-color: var(--accent);
+  background-color: var(--color-amber-200);
 }
 
 .btn-cart-price {
   position: absolute;
   bottom: -10px;
   right: 0;
-  padding: 2px 6px;
+  padding: 1px 5px;
   font-size: 10px;
-  border: 2px solid var(--white);
+  border: 2px solid var(--color-white);
   border-radius: 100px;
-  background-color: var(--accent);
+  background-color: var(--color-amber-200);
+}
+
+.btn-appearence {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  cursor: pointer;
+  transition: opacity 200ms ease-in;
+}
+
+.btn-appearence:hover {
+  opacity: .6;
 }
 
 /* Home */
@@ -162,8 +171,8 @@
 
 .home-container {
   position: relative;
-  background-color: var(--white);
-  background-image: url('https://res.cloudinary.com/drbu50m1e/image/upload/v1676917866/grocery-store/top-view-assortment-vegetables-grocery-bag_grd9dh.jpg');
+  background-color: var(--color-white);
+  background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -177,17 +186,22 @@
   border-radius: 20px;
 }
 
+.home-content h1 {
+  color: var(--color-white);
+}
+
 .home-content p {
   margin: 20px 0;
+  color: var(--color-white);
 }
 
 .btn-home {
   display: inline-block;
-  color: var(--white);
+  color: var(--color-white);
   font-weight: 500;
   padding: 10px 24px;
   border-radius: 100px;
-  background-color: var(--primary);
+  background-color: var(--color-green-500);
 }
 
 .home-image {
@@ -196,6 +210,7 @@
 
 /* Products */
 .products h1 {
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
@@ -228,7 +243,7 @@
 /* Product */
 .product-content {
   position: relative;
-  background-color: var(--white);
+  background-color: var(--color-white);
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 10px 100px rgb(0 0 0 / 5%);
@@ -246,7 +261,7 @@
   padding: 20px 0;
   display: flex;
   justify-content: center;
-  background-color: var(--secondary-2);
+  background-color: var(--color-gray-100);
   border-radius: 8px;
   transition: all 150ms ease-in;
 }
@@ -256,6 +271,7 @@
   object-fit: contain;
   width: 164px;
   height: 164px;
+  background-color: transparent;
   transition: all 150ms ease-in;
 }
 
@@ -268,7 +284,7 @@
 }
 
 .product-info p {
-  color: var(--secondary);
+  color: var(--color-gray-500);
   font-size: 14px;
 }
 
@@ -279,7 +295,7 @@
 }
 
 .product-price h3 span {
-  color: var(--secondary);
+  color: var(--color-gray-500);
   font-size: 14px;
   font-weight: 400;
 }
@@ -287,16 +303,16 @@
 .product-btns {
   display: flex;
   align-items: center;
-  background-color: var(--primary-1);
+  background-color: var(--color-green-100);
   border-radius: 100px;
-  color: var(--primary);
+  color: var(--color-green-900);
 }
 
 .product-btn-add {
   display: flex;
   align-items: center;
-  color: var(--primary);
-  background-color: var(--primary-1);
+  color: var(--color-green-900);
+  background-color: var(--color-green-100);
   padding: 8px 16px;
   border-radius: 100px;
   cursor: pointer;
@@ -327,7 +343,7 @@
 }
 
 .cart-content-product {
-  background-color: var(--white);
+  background-color: var(--color-white);
   border-radius: 20px;
   padding: 20px;
   margin: 10px 0;
@@ -342,7 +358,7 @@
 .cart-image a {
   display: flex;
   padding: 20px;
-  background-color: var(--secondary-2);
+  background-color: var(--color-gray-100);
   border-radius: 20px;
   transition: all 150ms ease-in;
 }
@@ -353,6 +369,7 @@
   width: 120px;
   height: 120px;
   object-fit: contain;
+  background-color: transparent;
   transition: all 150ms ease-in;
 }
 
@@ -374,16 +391,16 @@
 }
 
 .cart-info-top p {
-  color: var(--secondary);
+  color: var(--color-gray-500);
 }
 
 .cart-info span {
   padding: 4px 14px;
   font-size: 12px;
   font-weight: 500;
-  color: var(--secondary);
+  color: var(--color-gray-500);
   border-radius: 100px;
-  background-color: var(--secondary-1);
+  background-color: var(--color-gray-100);
   align-self: baseline;
 }
 
@@ -399,7 +416,7 @@
 }
 
 .cart-content-bill {
-  background-color: var(--white);
+  background-color: var(--color-white);
   padding: 20px;
   border-radius: 20px;
   margin: 10px 0;
@@ -412,8 +429,8 @@
 .bill-info {
   margin: 20px 0;
   padding: 20px 0;
-  border-top: 1px solid var(--secondary-1);
-  border-bottom: 1px solid var(--secondary-1);
+  border-top: 1px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-300);
 }
 
 .subtotal,
@@ -432,7 +449,7 @@
 
 .order-price p {
   font-size: 14px;
-  color: var(--secondary);
+  color: var(--color-gray-500);
 }
 
 .bill-total {
@@ -445,8 +462,8 @@
 }
 
 .btn-checkout {
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: var(--color-green-500);
+  color: var(--color-white);
   padding: 10px 24px;
   border-radius: 100px;
   cursor: pointer;
@@ -466,7 +483,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--secondary-2);
+  background-color: transparent;
   border-radius: 20px;
 }
 
@@ -474,7 +491,7 @@
   display: flex;
   align-items: center;
   column-gap: 10px;
-  color: var(--secondary);
+  color: var(--color-gray-500);
   margin-bottom: 20px;
 }
 
@@ -483,7 +500,7 @@
 }
 
 .product-details-info {
-  background-color: var(--white);
+  background-color: var(--color-white);
   border-radius: 20px;
   padding: 20px;
   display: flex;
@@ -496,9 +513,9 @@
   padding: 4px 14px;
   font-size: 12px;
   font-weight: 500;
-  color: var(--secondary);
+  color: var(--color-gray-500);
   border-radius: 100px;
-  background-color: var(--secondary-1);
+  background-color: var(--color-gray-100);
 }
 
 .product-details-info .product-btns {
@@ -508,13 +525,13 @@
 
 .product-details-food-condition {
   font-size: 14px;
-  color: var(--secondary);
+  color: var(--color-gray-500);
 }
 
 .product-details-info h3 span {
   font-size: 14px;
   font-weight: 400;
-  color: var(--secondary);
+  color: var(--color-gray-500);
 }
 
 .product-details-category-top {
@@ -526,12 +543,12 @@
 
 .btn-favorite {
   display: flex;
-  color: var(--secondary);
+  color: var(--color-gray-500);
   cursor: pointer;
 }
 
 .product-details-info-bottom {
-  background-color: var(--white);
+  background-color: var(--color-white);
   border-radius: 20px;
   padding: 20px;
   display: flex;
@@ -542,8 +559,8 @@
 .product-details-nutritions {
   padding: 20px 0;
   margin: 20px 0;
-  border-top: 1px solid var(--secondary-1);
-  border-bottom: 1px solid var(--secondary-1);
+  border-top: 1px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-300);
 }
 
 .product-details-nutritions ul {
@@ -556,12 +573,11 @@
 
 .product-details-nutritions ul li span {
   font-weight: 400;
-  color: var(--secondary);
+  color: var(--color-gray-500);
 }
 
 .product-details-info-title {
   font-weight: 500;
-  margin-top: 20px;
 }
 
 .product-details-description {
@@ -571,11 +587,17 @@
 /* About */
 .about-content-grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 50% calc(50% - 40px);
+  column-gap: 40px;
 }
 
 .about-info h1 {
   margin-bottom: 20px;
+}
+
+.about-info-image {
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .about-info-image img {
@@ -605,21 +627,21 @@
 
 .form-input {
   padding: 16px 24px;
-  background-color: var(--secondary-1);
+  background-color: var(--color-gray-300);
   font-family: 'Roboto', sans-serif;
   border-radius: 4px;
   margin-top: 10px;
 }
 
 .contact-form input::placeholder {
-  color: var(--secondary);
+  color: var(--color-gray-500);
 }
 
 .form-btn-submit {
   padding: 16px 24px;
   text-align: center;
-  color: var(--white);
-  background-color: var(--primary);
+  color: var(--color-white);
+  background-color: var(--color-green-500);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -641,10 +663,7 @@
   list-style-type: none;
   display: flex;
   align-items: center;
-}
-
-.footer-content ul li:nth-child(-n + 4) {
-  margin-right: 20px;
+  column-gap: 20px;
 }
 
 .footer-content ul li a {
@@ -674,7 +693,7 @@
   z-index: 9;
   width: 50px;
   height: 50px;
-  border-top: 4px solid var(--black);
+  border-top: 4px solid var(--color-gray-900);
   border-right: 4px solid transparent;
   border-radius: 50%;
   animation: 1s spin linear infinite;

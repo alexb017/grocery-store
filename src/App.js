@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react';
 import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
 import Footer from './components/Footer';
-import Credits from './components/Credits';
 import Favorite from './components/Favorite';
 
 function App() {
@@ -172,7 +171,6 @@ function App() {
                 />
               }
             ></Route>
-            <Route path="/credits" element={<Credits />}></Route>
           </Routes>
         </div>
         <Footer />

@@ -29,7 +29,7 @@ export default function About() {
             <img
               width="500"
               height="500"
-              src="https://res.cloudinary.com/drbu50m1e/image/upload/v1676912513/grocery-store/different_berries_nqyuey.jpg"
+              src="https://images.unsplash.com/photo-1550497507-634bd6d81ecd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80"
               alt="berries"
             />
           </div>

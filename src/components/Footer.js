@@ -30,9 +30,6 @@ export default function Footer() {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
-            <li>
-              <Link to="/credits">Credits</Link>
-            </li>
           </ul>
         </div>
       </div>
