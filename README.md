@@ -1,6 +1,6 @@
 # Grocery Store
 
-I build a simple grocery store app using react.
+Created a grocery store app using React. Used an external API to fetch products. Implemented, cart count, favorites, and dark mode functionalities.
 
 ![Alt text](/public/grocery-store.png)
 
@@ -14,3 +14,4 @@ I build a simple grocery store app using react.
 - show product details
 - show favorite products
 - show related products
+- responsive design
