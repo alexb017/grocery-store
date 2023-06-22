@@ -698,6 +698,12 @@
   width: 100%;
 }
 
+@media screen and (min-width: 768px) {
+  .product-details-image img {
+    width: auto;
+  }
+}
+
 .product-link-back {
   display: flex;
   align-items: center;
