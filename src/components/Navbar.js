@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Navbar(props) {
-  const [isDarkTheme, setIsDarkTheme] = useState(
-    () => localStorage.getItem('isDarkTheme') === 'true'
-  );
+  // const [isDarkTheme, setIsDarkTheme] = useState(
+  //   () => localStorage.getItem('isDarkTheme') === 'true'
+  // );
   const [showDropdown, setShowDropdown] = useState(false);
   const [showDropdownBg, setShowDropdownBg] = useState(false);
   const dropdownRef = useRef(null);
@@ -13,7 +13,11 @@ export default function Navbar(props) {
 
   useEffect(() => {
     function handleOutsideClick(e) {
-      if (dropdownBgRef.current && !dropdownRef.current.contains(e.target) && !btnDropdownRef.current.contains(e.target)) {
+      if (
+        dropdownBgRef.current &&
+        !dropdownRef.current.contains(e.target) &&
+        !btnDropdownRef.current.contains(e.target)
+      ) {
         setShowDropdown(false);
         setShowDropdownBg(false);
       }
@@ -22,33 +26,33 @@ export default function Navbar(props) {
     document.addEventListener('mousedown', handleOutsideClick);
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
-    }
-  }, [dropdownRef, dropdownBgRef, btnDropdownRef])
+    };
+  }, [dropdownRef, dropdownBgRef, btnDropdownRef]);
 
-  useEffect(() => {
-    localStorage.setItem('isDarkTheme', isDarkTheme);
+  // useEffect(() => {
+  //   localStorage.setItem('isDarkTheme', isDarkTheme);
 
-    if (isDarkTheme) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
-  }, [isDarkTheme]);
+  //   if (isDarkTheme) {
+  //     document.body.classList.add('dark');
+  //   } else {
+  //     document.body.classList.remove('dark');
+  //   }
+  // }, [isDarkTheme]);
 
-  function handleThemeClick() {
-    setIsDarkTheme(!isDarkTheme);
-  }
+  // function handleThemeClick() {
+  //   setIsDarkTheme(!isDarkTheme);
+  // }
 
   const productsCount = props.cart.reduce(
     (total, product) => total + product.quantity,
     0
   );
 
-  const totalPrice = props.cart.reduce(
-    (total, product) =>
-      total + Number.parseFloat(product.price) * product.quantity,
-    0
-  );
+  // const totalPrice = props.cart.reduce(
+  //   (total, product) =>
+  //     total + Number.parseFloat(product.price) * product.quantity,
+  //   0
+  // );
 
   const favorites = props.cart.reduce(
     (total, product) => total + (product.favorite ? 1 : 0),
@@ -59,7 +63,6 @@ export default function Navbar(props) {
     setShowDropdown(!showDropdown);
     setShowDropdownBg(!showDropdownBg);
   }
-
 
   return (
     <nav className="nav">
@@ -82,10 +85,20 @@ export default function Navbar(props) {
                 to="/favorite"
                 className={({ isActive }) => (isActive ? 'active' : '')}
               >
-                {favorites > 0 &&
+                {favorites > 0 && (
                   <div className="favorite-count">{favorites}</div>
-                }
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M178 32c-20.65 0-38.73 8.88-50 23.89C116.73 40.88 98.65 32 78 32a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 220.66 240 164 240 94a62.07 62.07 0 0 0-62-62Zm-50 174.8C109.74 196.16 32 147.69 32 94a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8Z" /></svg>
+                )}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M178 32c-20.65 0-38.73 8.88-50 23.89C116.73 40.88 98.65 32 78 32a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 220.66 240 164 240 94a62.07 62.07 0 0 0-62-62Zm-50 174.8C109.74 196.16 32 147.69 32 94a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8Z"
+                  />
+                </svg>
               </NavLink>
             </li>
             <li>
@@ -93,9 +106,9 @@ export default function Navbar(props) {
                 {productsCount > 0 && (
                   <>
                     <div className="btn-cart-count">{productsCount}</div>
-                    <div className="btn-cart-price">
+                    {/* <div className="btn-cart-price">
                       ${totalPrice.toFixed(2)}
-                    </div>
+                    </div> */}
                   </>
                 )}
                 <svg
@@ -109,12 +122,27 @@ export default function Navbar(props) {
               </NavLink>
             </li>
             <li>
-              <button type="button" className="btn-more" onClick={handleDropdownClick} ref={btnDropdownRef}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8ZM40 72h176a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16Zm176 112H40a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16Z" /></svg>
+              <button
+                type="button"
+                className="btn-more"
+                onClick={handleDropdownClick}
+                ref={btnDropdownRef}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8ZM40 72h176a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16Zm176 112H40a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16Z"
+                  />
+                </svg>
               </button>
             </li>
           </ul>
-          {showDropdown &&
+          {showDropdown && (
             <div className="dropdown-mobile" ref={dropdownRef}>
               <div className="dropdown-mobile-content">
                 <ul className="dropdown-ul">
@@ -154,7 +182,16 @@ export default function Navbar(props) {
                       Contact
                     </NavLink>
                   </li>
-                  <li className="nav-li nav-li-appearance-mobile">
+                  <li className="nav-li">
+                    <NavLink
+                      to="/credits"
+                      className={({ isActive }) => (isActive ? 'active' : '')}
+                      onClick={handleDropdownClick}
+                    >
+                      Credits
+                    </NavLink>
+                  </li>
+                  {/* <li className="nav-li nav-li-appearance-mobile">
                     <button type="button" className="btn-appearence btn-appearence-mobile" onClick={handleThemeClick}>
                       {!isDarkTheme ?
                         <>
@@ -167,11 +204,14 @@ export default function Navbar(props) {
                           Light Mode
                         </>}
                     </button>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
-            </div>}
-          {showDropdownBg && <div className="dropdown-background" ref={dropdownBgRef}></div>}
+            </div>
+          )}
+          {showDropdownBg && (
+            <div className="dropdown-background" ref={dropdownBgRef}></div>
+          )}
           <ul className="nav-ul">
             <li className="nav-li">
               <NavLink
@@ -205,15 +245,25 @@ export default function Navbar(props) {
                 Contact
               </NavLink>
             </li>
-            <li className="nav-li nav-li-favorite">
+            <li className="nav-li-favorite">
               <NavLink
                 to="/favorite"
                 className={({ isActive }) => (isActive ? 'active' : '')}
               >
-                {favorites > 0 &&
+                {favorites > 0 && (
                   <div className="favorite-count">{favorites}</div>
-                }
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M178 32c-20.65 0-38.73 8.88-50 23.89C116.73 40.88 98.65 32 78 32a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 220.66 240 164 240 94a62.07 62.07 0 0 0-62-62Zm-50 174.8C109.74 196.16 32 147.69 32 94a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8Z" /></svg>
+                )}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M178 32c-20.65 0-38.73 8.88-50 23.89C116.73 40.88 98.65 32 78 32a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 220.66 240 164 240 94a62.07 62.07 0 0 0-62-62Zm-50 174.8C109.74 196.16 32 147.69 32 94a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8Z"
+                  />
+                </svg>
                 Favorite
               </NavLink>
             </li>
@@ -222,9 +272,9 @@ export default function Navbar(props) {
                 {productsCount > 0 && (
                   <>
                     <div className="btn-cart-count">{productsCount}</div>
-                    <div className="btn-cart-price">
+                    {/* <div className="btn-cart-price">
                       ${totalPrice.toFixed(2)}
-                    </div>
+                    </div> */}
                   </>
                 )}
                 <svg
@@ -238,20 +288,45 @@ export default function Navbar(props) {
                 Cart
               </NavLink>
             </li>
-            <li className="nav-li">
-              <button type="button" className="btn-appearence" onClick={handleThemeClick}>
-                {!isDarkTheme ?
+            {/* <li className="nav-li">
+              <button
+                type="button"
+                className="btn-appearence"
+                onClick={handleThemeClick}
+              >
+                {!isDarkTheme ? (
                   <>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256"><path fill="currentColor" d="M120 40V16a8 8 0 0 1 16 0v24a8 8 0 0 1-16 0Zm72 88a64 64 0 1 1-64-64a64.07 64.07 0 0 1 64 64Zm-16 0a48 48 0 1 0-48 48a48.05 48.05 0 0 0 48-48ZM58.34 69.66a8 8 0 0 0 11.32-11.32l-16-16a8 8 0 0 0-11.32 11.32Zm0 116.68l-16 16a8 8 0 0 0 11.32 11.32l16-16a8 8 0 0 0-11.32-11.32ZM192 72a8 8 0 0 0 5.66-2.34l16-16a8 8 0 0 0-11.32-11.32l-16 16A8 8 0 0 0 192 72Zm5.66 114.34a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32-11.32ZM48 128a8 8 0 0 0-8-8H16a8 8 0 0 0 0 16h24a8 8 0 0 0 8-8Zm80 80a8 8 0 0 0-8 8v24a8 8 0 0 0 16 0v-24a8 8 0 0 0-8-8Zm112-88h-24a8 8 0 0 0 0 16h24a8 8 0 0 0 0-16Z" /></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M120 40V16a8 8 0 0 1 16 0v24a8 8 0 0 1-16 0Zm72 88a64 64 0 1 1-64-64a64.07 64.07 0 0 1 64 64Zm-16 0a48 48 0 1 0-48 48a48.05 48.05 0 0 0 48-48ZM58.34 69.66a8 8 0 0 0 11.32-11.32l-16-16a8 8 0 0 0-11.32 11.32Zm0 116.68l-16 16a8 8 0 0 0 11.32 11.32l16-16a8 8 0 0 0-11.32-11.32ZM192 72a8 8 0 0 0 5.66-2.34l16-16a8 8 0 0 0-11.32-11.32l-16 16A8 8 0 0 0 192 72Zm5.66 114.34a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32-11.32ZM48 128a8 8 0 0 0-8-8H16a8 8 0 0 0 0 16h24a8 8 0 0 0 8-8Zm80 80a8 8 0 0 0-8 8v24a8 8 0 0 0 16 0v-24a8 8 0 0 0-8-8Zm112-88h-24a8 8 0 0 0 0 16h24a8 8 0 0 0 0-16Z"
+                      />
+                    </svg>
                     Dark Mode
                   </>
-                  :
+                ) : (
                   <>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256"><path fill="currentColor" d="M233.54 142.23a8 8 0 0 0-8-2a88.08 88.08 0 0 1-109.8-109.8a8 8 0 0 0-10-10a104.84 104.84 0 0 0-52.91 37A104 104 0 0 0 136 224a103.09 103.09 0 0 0 62.52-20.88a104.84 104.84 0 0 0 37-52.91a8 8 0 0 0-1.98-7.98Zm-44.64 48.11A88 88 0 0 1 65.66 67.11a89 89 0 0 1 31.4-26A106 106 0 0 0 96 56a104.11 104.11 0 0 0 104 104a106 106 0 0 0 14.92-1.06a89 89 0 0 1-26.02 31.4Z" /></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M233.54 142.23a8 8 0 0 0-8-2a88.08 88.08 0 0 1-109.8-109.8a8 8 0 0 0-10-10a104.84 104.84 0 0 0-52.91 37A104 104 0 0 0 136 224a103.09 103.09 0 0 0 62.52-20.88a104.84 104.84 0 0 0 37-52.91a8 8 0 0 0-1.98-7.98Zm-44.64 48.11A88 88 0 0 1 65.66 67.11a89 89 0 0 1 31.4-26A106 106 0 0 0 96 56a104.11 104.11 0 0 0 104 104a106 106 0 0 0 14.92-1.06a89 89 0 0 1-26.02 31.4Z"
+                      />
+                    </svg>
                     Light Mode
-                  </>}
+                  </>
+                )}
               </button>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

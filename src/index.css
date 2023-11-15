@@ -1,45 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 :root {
   --color-white: #fff;
   --color-white-text: #fff;
-  --color-gray-100: #fafafa;
-  --color-gray-100: #f5f5f5;
-  --color-gray-300: #d4d4d4;
-  --color-gray-400: #a3a3a3;
-  --color-gray-500: #737373;
-  --color-gray-700: #404040;
-  --color-gray-800: #262626;
-  --color-gray-900: #171717;
+  --color-neutral-100: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+  --color-lime-100: #ecfccb;
+  --color-lime-200: #d9f99d;
+  --color-lime-300: #bef264;
+  --color-lime-400: #a3e635;
+  --color-lime-500: #84cc16;
+  --color-lime-600: #65a30d;
+  --color-lime-700: #4d7c0f;
+  --color-lime-800: #3f6212;
+  --color-lime-900: #365314;
+  --color-lime-950: #1a2e05;
   --color-red-500: #ef4444;
-  --color-green-100: #dcfce7;
-  --color-green-200: #bbf7d0;
-  --color-green-500: #22c55e;
-  --color-green-800: #166534;
-  --color-green-900: #14532d;
-  --color-green-950: #052e16;
-  --color-amber-200: #fde68a;
-  --color-amber-950: #451a03;
 }
 
 body.dark {
   --color-white: #262626;
-  --color-gray-100: #171717;
-  --color-gray-500: #d4d4d4;
-  --color-gray-900: #fff;
-  --color-green-100: #14532d;
-  --color-green-900: #bbf7d0;
-  --color-amber-200: #171717;
-  --color-amber-950: #a3a3a3;
+  --color-neutral-100: #171717;
+  --color-neutral-500: #d4d4d4;
+  --color-neutral-900: #fff;
+  --color-lime-100: #14532d;
+  --color-lime-900: #bbf7d0;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  color: var(--color-gray-900);
-  background-color: var(--color-gray-100);
+  color: var(--color-neutral-950);
 }
 
 * {
@@ -55,7 +55,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--color-gray-900);
+  color: var(--color-neutral-950);
 }
 
 a:focus-visible {

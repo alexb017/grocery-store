@@ -11,6 +11,7 @@ import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
 import Footer from './components/Footer';
 import Favorite from './components/Favorite';
+import Credits from './components/Credits';
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -64,7 +65,6 @@ function App() {
       setCart(updatedCart);
     }
 
-
     if (existingProduct.quantity === 1 && !existingProduct.favorite) {
       // delete item
       const productDelete = cart.filter((product) => product.id !== id);
@@ -94,10 +94,10 @@ function App() {
   }
 
   function handleProductFavoriteDelete(id) {
-    const productFavorite = cart.find(product => product.id === id);
+    const productFavorite = cart.find((product) => product.id === id);
 
     if (productFavorite.quantity === 0) {
-      const productDelete = cart.filter(product => product.id !== id);
+      const productDelete = cart.filter((product) => product.id !== id);
       setCart(productDelete);
     }
 
@@ -171,6 +171,7 @@ function App() {
                 />
               }
             ></Route>
+            <Route path="/credits" element={<Credits />}></Route>
           </Routes>
         </div>
         <Footer />
