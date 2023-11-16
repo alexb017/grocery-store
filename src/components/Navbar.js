@@ -145,6 +145,7 @@ export default function Navbar(props) {
           {showDropdown && (
             <div className="dropdown-mobile" ref={dropdownRef}>
               <div className="dropdown-mobile-content">
+                <h3>Menu</h3>
                 <ul className="dropdown-ul">
                   <li className="nav-li">
                     <NavLink

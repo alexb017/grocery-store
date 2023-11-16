@@ -26,6 +26,7 @@
   --color-lime-900: #365314;
   --color-lime-950: #1a2e05;
   --color-red-500: #ef4444;
+  --color-teal-100: #ccfbf1;
 }
 
 body.dark {
@@ -43,7 +44,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color: var(--color-neutral-950);
-  background-color: var(--color-neutral-50);
+  background-color: var(--color-neutral-100);
 }
 
 * {
@@ -92,6 +93,7 @@ h2 {
 
 h3 {
   font-size: 20px;
+  line-height: 1.2;
 }
 
 button {
@@ -109,4 +111,9 @@ svg {
 input,
 textarea {
   all: unset;
+}
+
+/* Remove blue rectangle when click on mobile device, idk finded on stakoverflow */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

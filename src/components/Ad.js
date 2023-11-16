@@ -9,8 +9,8 @@ export default function Ad() {
             New to <strong>GroceryStore</strong>?
           </p>
           <p className="text-promo">
-            Use promo code <strong>NEWGROCERY</strong> to get $15 off your first
-            4 online grocery orders of $75 or more.
+            Use promo code <strong>NEWGROCERY</strong> to get $15 off on your
+            grocery order of $75 or more.
           </p>
           <NavLink to="/products">
             Learn more{' '}

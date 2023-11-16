@@ -4,7 +4,7 @@ import Products from './components/Products';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Contact from './components/Contact';
-import Ad from './components/Ad';
+//import Ad from './components/Ad';
 import './App.css';
 import { useEffect, useState } from 'react';
 import Cart from './components/Cart';
@@ -116,7 +116,7 @@ function App() {
   return (
     <BrowserRouter>
       <main className="main">
-        <Ad />
+        {/* <Ad /> */}
         <Navbar cart={cart} />
         <div className="container">
           <Routes>
