@@ -4,7 +4,7 @@ Created a grocery store app using React, with Stripe Checkout Integration.
 
 ![Alt text](/public/Grocery-Store-Products.jpg)
 ![Alt text](/public/Grocery-Store-ProductDetails.jpg)
-![Alt text](/public/Grocery-Store-Favotite.jpg)
+![Alt text](/public/Grocery-Store-Favorite.jpg)
 ![Alt text](/public/Grocery-Store-Cart.jpg)
 ![Alt text](/public/Grocery-Store-Cart-Mobile.jpg)
 
