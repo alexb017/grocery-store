@@ -1,6 +1,6 @@
 # Grocery Store
 
-Created a grocery store app using React, with Stripe Checkout Integration.
+Created a grocery store supermarket with Stripe checkout integration using React.js.
 
 ![Alt text](/public/Grocery-Store-Products.jpg)
 ![Alt text](/public/Grocery-Store-ProductDetails.jpg)
@@ -10,7 +10,7 @@ Created a grocery store app using React, with Stripe Checkout Integration.
 
 #### Features
 
-- fetch products from an RESTful API (Firebase)
+- fetch products from 2 REST API endpoints (Firebase)
 - add/delete products in cart
 - show product quantity
 - show cart count
@@ -18,4 +18,4 @@ Created a grocery store app using React, with Stripe Checkout Integration.
 - show product details
 - show favorite products
 - show related products
-- responsive design
+- responsive UI design

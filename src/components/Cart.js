@@ -1,4 +1,9 @@
 import ProductInfo from './ProductInfo';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe(
+  'pk_test_51NoptQIF5Ewa0z1weAgAPPKYRio4rkIbNTYPuRPlXd3OdWsMaceCjCMNETTJSXp9yVsXpx6whtH8W4r0LGAIZ86L00YKiIUNvJ'
+);
 
 export default function Cart(props) {
   const { cart } = props;
@@ -8,11 +13,37 @@ export default function Cart(props) {
     0
   );
 
-  let totalPrice = cart.reduce(
+  const totalPrice = cart.reduce(
     (total, product) =>
       total + Number.parseFloat(product.price) * product.quantity,
     0
   );
+
+  const totalQuantity = cart.reduce(
+    (total, product) => total + Number.parseInt(product.quantity),
+    0
+  );
+
+  async function handleCheckout(event) {
+    event.preventDefault();
+
+    const stripe = await stripePromise;
+
+    const lineItems = cart.map((item) => {
+      return { price: item?.price_id, quantity: item?.quantity };
+    });
+
+    try {
+      await stripe?.redirectToCheckout({
+        lineItems: lineItems,
+        mode: 'payment',
+        successUrl: `https://grocery-store-alexb017.vercel.app/`,
+        cancelUrl: `https://grocery-store-alexb017.vercel.app/`,
+      });
+    } catch (error) {
+      throw new Error('Error wrong api key...');
+    }
+  }
 
   return (
     <div className="cart">
@@ -21,6 +52,9 @@ export default function Cart(props) {
           Cart <span>({totalProducts} items)</span>
         </h1>
         {cart.length === 0 && (
+          <p>You have not added any product to your cart.</p>
+        )}
+        {totalQuantity === 0 && (
           <p>You have not added any product to your cart.</p>
         )}
         {cart.length > 0 && (
@@ -62,15 +96,13 @@ export default function Cart(props) {
                   <p>Total</p>
                   <p>${totalPrice.toFixed(2)}</p>
                 </div>
-                <button type="button" className="btn-checkout">
-                  Continue to checkout
-                </button>
+                <form onSubmit={handleCheckout}>
+                  <button type="submit" className="btn-checkout">
+                    Continue to checkout
+                  </button>
+                </form>
               </div>
-            ) : (
-              <button type="button" className="btn">
-                Continue Shopping
-              </button>
-            )}
+            ) : null}
           </div>
         )}
       </div>
