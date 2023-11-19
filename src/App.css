@@ -293,7 +293,8 @@
 .cart,
 .product-details,
 .credits,
-.favorite {
+.favorite,
+.success-order {
   padding: 40px 0;
 }
 
@@ -915,6 +916,25 @@
   background-color: var(--color-lime-500);
   border-radius: 4px;
   cursor: pointer;
+}
+
+.success-order-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.success-order-info h1 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.continue-shopping {
+  margin-top: 16px;
+  padding: 8px 24px;
+  font-weight: 500;
+  background-color: var(--color-lime-300);
+  border-radius: 100px;
 }
 
 /* Footer */

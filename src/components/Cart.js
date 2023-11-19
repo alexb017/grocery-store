@@ -37,8 +37,8 @@ export default function Cart(props) {
       await stripe?.redirectToCheckout({
         lineItems: lineItems,
         mode: 'payment',
-        successUrl: `https://grocery-store-alexb017.vercel.app/`,
-        cancelUrl: `https://grocery-store-alexb017.vercel.app/`,
+        successUrl: `https://grocery-store-alexb017.vercel.app/success-order`,
+        cancelUrl: `https://grocery-store-alexb017.vercel.app/cart`,
       });
     } catch (error) {
       throw new Error('Error wrong api key...');

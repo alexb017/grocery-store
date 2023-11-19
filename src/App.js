@@ -12,6 +12,7 @@ import ProductDetails from './components/ProductDetails';
 import Footer from './components/Footer';
 import Favorite from './components/Favorite';
 import Credits from './components/Credits';
+import SuccessOrder from './components/SuccessOrder';
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -171,6 +172,7 @@ function App() {
                 />
               }
             ></Route>
+            <Route path="/success-order" element={<SuccessOrder />}></Route>
             <Route path="/credits" element={<Credits />}></Route>
           </Routes>
         </div>
