@@ -1,9 +1,9 @@
 import ProductInfo from './ProductInfo';
-import { loadStripe } from '@stripe/stripe-js';
+//import { loadStripe } from '@stripe/stripe-js';
 
-const stripePromise = loadStripe(
-  'pk_test_51NoptQIF5Ewa0z1weAgAPPKYRio4rkIbNTYPuRPlXd3OdWsMaceCjCMNETTJSXp9yVsXpx6whtH8W4r0LGAIZ86L00YKiIUNvJ'
-);
+// const stripePromise = loadStripe(
+//   'pk_test_51NoptQIF5Ewa0z1weAgAPPKYRio4rkIbNTYPuRPlXd3OdWsMaceCjCMNETTJSXp9yVsXpx6whtH8W4r0LGAIZ86L00YKiIUNvJ'
+// );
 
 export default function Cart(props) {
   const { cart } = props;
@@ -27,22 +27,39 @@ export default function Cart(props) {
   async function handleCheckout(event) {
     event.preventDefault();
 
-    const stripe = await stripePromise;
-
     const lineItems = cart.map((item) => {
       return { price: item?.price_id, quantity: item?.quantity };
     });
 
     try {
-      await stripe?.redirectToCheckout({
-        lineItems: lineItems,
-        mode: 'payment',
-        successUrl: `https://grocery-store-alexb017.vercel.app/success-order`,
-        cancelUrl: `https://grocery-store-alexb017.vercel.app/cart`,
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(lineItems),
       });
+      const data = await res.json();
+      console.log(data);
     } catch (error) {
-      throw new Error('Error wrong api key...');
+      throw new Error('Error post new order');
     }
+    // const stripe = await stripePromise;
+
+    // const lineItems = cart.map((item) => {
+    //   return { price: item?.price_id, quantity: item?.quantity };
+    // });
+
+    // try {
+    //   await stripe?.redirectToCheckout({
+    //     lineItems: lineItems,
+    //     mode: 'payment',
+    //     successUrl: `https://grocery-store-alexb017.vercel.app/success-order`,
+    //     cancelUrl: `https://grocery-store-alexb017.vercel.app/cart`,
+    //   });
+    // } catch (error) {
+    //   throw new Error('Error wrong api key...');
+    // }
   }
 
   return (
