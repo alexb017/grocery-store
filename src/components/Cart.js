@@ -27,22 +27,35 @@ export default function Cart(props) {
   async function handleCheckout(event) {
     event.preventDefault();
 
-    const stripe = await stripePromise;
+    const response = await fetch(
+      'http://localhost:4242/create-checkout-session',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({}),
+      }
+    );
 
-    const lineItems = cart.map((item) => {
-      return { price: item?.price_id, quantity: item?.quantity };
-    });
+    const session = await response.json();
+    console.log(session);
+    // const stripe = await stripePromise;
 
-    try {
-      await stripe?.redirectToCheckout({
-        lineItems: lineItems,
-        mode: 'payment',
-        successUrl: `https://grocery-store-alexb017.vercel.app/success-order`,
-        cancelUrl: `https://grocery-store-alexb017.vercel.app/cart`,
-      });
-    } catch (error) {
-      throw new Error('Error wrong api key...');
-    }
+    // const lineItems = cart.map((item) => {
+    //   return { price: item?.price_id, quantity: item?.quantity };
+    // });
+
+    // try {
+    //   await stripe?.redirectToCheckout({
+    //     lineItems: lineItems,
+    //     mode: 'payment',
+    //     successUrl: `https://grocery-store-alexb017.vercel.app/success-order`,
+    //     cancelUrl: `https://grocery-store-alexb017.vercel.app/cart`,
+    //   });
+    // } catch (error) {
+    //   throw new Error('Error wrong api key...');
+    // }
   }
 
   return (
