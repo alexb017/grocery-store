@@ -1,6 +1,17 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-export default function SuccessOrder() {
+export default function SuccessOrder({ setCart }) {
+  const location = useLocation();
+  const { pathname } = location;
+
+  useEffect(() => {
+    if (pathname === '/success-order') {
+      setCart([]);
+    }
+  }, [pathname, setCart]);
+
   return (
     <div className="success-order">
       <div className="success-order-content">

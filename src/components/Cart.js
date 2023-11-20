@@ -51,12 +51,9 @@ export default function Cart(props) {
         <h1>
           Cart <span>({totalProducts} items)</span>
         </h1>
-        {cart.length === 0 && (
+        {cart.length === 0 || totalQuantity === 0 ? (
           <p>You have not added any product to your cart.</p>
-        )}
-        {totalQuantity === 0 && (
-          <p>You have not added any product to your cart.</p>
-        )}
+        ) : null}
         {cart.length > 0 && (
           <div className="cart-content-grid">
             <div className="cart-content-products">

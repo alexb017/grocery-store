@@ -172,7 +172,10 @@ function App() {
                 />
               }
             ></Route>
-            <Route path="/success-order" element={<SuccessOrder />}></Route>
+            <Route
+              path="/success-order"
+              element={<SuccessOrder setCart={setCart} />}
+            ></Route>
             <Route path="/credits" element={<Credits />}></Route>
           </Routes>
         </div>
